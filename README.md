@@ -2,8 +2,6 @@
 # Course Project
 # Wildfire Analysis and Healthcare Impact - Del Rio
 
-[![GitHub license](https://img.shields.io/github/license/neelshah2302/data-512-wildfire-analysis-delrio)](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/main/LICENSE)
-
 
 # Part 1 - Common Analysis
 
