@@ -106,78 +106,39 @@ Unexpectedly, a negative correlation was identified for smoke estimates and infa
 
 # Data Description:
 
-1.	Wildfire Data:
+Please refer to the document ![Data Description](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/main/Documentation/Data_description.docx) in this repo.
 
-Column Name	Data Type	Description
-OBJECTID	Integer	Unique identifier for each record in the dataset.
-USGS_Assigned_ID	Numeric/String	Assigned identifier by the US Geological Survey (USGS) for the fire.
-Assigned_Fire_Type	String	Type or classification of the assigned fire.
-Fire_Year	Integer	The calendar year in which the fire occurred.
-Fire_Polygon_Tier	String	Tier or level of classification for the fire polygon.
-Fire_Attribute_Tiers	String	Tiers or levels of attributes associated with the fire.
-GIS_Acres	Float	Area of the fire in acres according to the GIS data.
-GIS_Hectares	Float	Area of the fire in hectares according to the GIS data.
-Source_Datasets	String	List of datasets used as sources for fire information.
-Listed_Fire_Types	String	Types of fires listed for the particular record.
-Overlap_Within_1_or_2_Flag	String	Flag indicating overlap within 1 or 2 units.
-Circleness_Scale	Float	Scale related to the circular shape of the fire.
-Circle_Flag	String	Flag indicating whether the fire has a circular shape.
-Exclude_From_Summary_Rasters	String	Flag indicating whether the fire should be excluded from summary rasters.
-Shape_Length	Float	Length of the shape representation of the fire.
-Shape_Area	Float	Area of the shape representation of the fire.
-fire_lat	Float	Latitude of the fire location.
-fire_lon	Float	Longitude of the fire location.
-distance_from_del_rio	Float	Distance from Del Rio, a reference point, to the fire location.
-smoke_estimate	Numeric	Estimate of smoke associated with the fire.
+# Challenges and Limitations:
+1.	Data Quality and Completeness:
+The analysis heavily relies on open-source data, particularly the USGS Wildfire data. The quality and completeness of this data may vary, potentially introducing biases and inaccuracies into the smoke estimates. The lack of comprehensive information on all influencing variables may limit the accuracy of predictions and correlations.
 
-2.	AQI Data:
+2.	Assumptions in Predictive Modeling:
+The ARIMA predictive model is based on assumptions about the stationarity and linearity of the data. Deviations from these assumptions may compromise the model's accuracy. Assumptions about the stability of future emissions and environmental conditions could introduce uncertainties into the long-term smoke estimates.
 
-Column Name	Data Type	Description
-date_local	Date	The local date for which air quality information is recorded.
-pollutant_standard	String	The air quality pollutant standard being measured, such as PM2.5, PM10, Ozone, etc.
-aqi	Integer	The Air Quality Index (AQI) value corresponding to the pollutant_standard for the given date_local. The AQI provides a numerical representation of the air quality level.
+3.	Unknown Variables:
+The analysis primarily focuses on smoke estimates as a factor influencing health outcomes. However, there may be other unaccounted variables and confounding factors, such as socio-economic status, individual health conditions, and regional policy changes, that can impact the observed correlations. Identifying and controlling for these unknowns is challenging and may introduce bias.
 
-3.	Deaths by Race Data:
+4.	Privacy Concerns in Healthcare Data:
+Extracting healthcare data from public registries introduces privacy and security concerns. While efforts were made to aggregate data at a county level, potential risks to individual privacy cannot be entirely eliminated. The reliance on aggregated data might limit the granularity of the analysis.
 
-Column Name	Data Type	Description
-Year	Integer	The calendar year in which the data was recorded.
-All Races Total Deaths - Texas	Integer	The total number of deaths for all races in the state of Texas during the specified year.
-All Races Total Deaths	Integer	The total number of deaths for all races across all regions during the specified year.
-All Races Male Deaths	Integer	The total number of deaths for all races among males during the specified year.
-All Races Female Deaths	Integer	The total number of deaths for all races among females during the specified year.
-White Total Deaths	Integer	The total number of deaths among individuals identified as White during the specified year.
-White Male Deaths	Integer	The total number of deaths among White males during the specified year.
-White Female Deaths	Integer	The total number of deaths among White females during the specified year.
-Black Total Deaths	Integer	The total number of deaths among individuals identified as Black during the specified year.
-Black Male Deaths	Integer	The total number of deaths among Black males during the specified year.
-Black Female Deaths	Integer	The total number of deaths among Black females during the specified year.
-Hispanic* Total Deaths	Integer	The total number of deaths among individuals identified as Hispanic* during the specified year.
-Hispanic* Male Deaths	Integer	The total number of deaths among Hispanic* males during the specified year.
-Hispanic* Female Deaths	Integer	The total number of deaths among Hispanic* females during the specified year.
-Other** Total Deaths	Integer	The total number of deaths among individuals identified as Other** during the specified year.
-Other** Male Deaths	Integer	The total number of deaths among Other** males during the specified year.
-Other** Female Deaths	Integer	The total number of deaths among Other** females during the specified year.
+5.	Future Prediction Uncertainties:
+Predicting smoke estimates and healthcare effects over the next 25 years introduces uncertainties related to technological, economic, and policy changes. Environmental regulations and interventions may evolve, influencing the accuracy of long-term predictions.
 
+6.	Weather Conditions and Meteorological Data:
+The analysis does not deeply explore the influence of weather conditions, wind patterns, and temperature on smoke dispersion. Dependencies on accurate meteorological data for a detailed understanding of smoke behavior and its potential impact on health were not fully addressed.
 
-4.	Cancer Deaths Data:
+7.	Temporal Scope and Historical Data:
+The analysis considers historical data from 1963 to 2023. While this timeframe provides substantial insights, it may not capture the full spectrum of long-term trends and variations. The historical scope might not fully reflect changes in healthcare infrastructure, public awareness, and environmental policies.
 
-Column Name	Data Type	Description
-Year	Integer	The calendar year in which the data was recorded.
-Population	Integer	The total number of individuals in a specified region or demographic during the year.
-Cancer Deaths	Integer	The number of deaths attributed to cancer within the specified population and year.
-Population affected	Integer	The count of individuals who have been diagnosed or affected by cancer in any form.
-Cancer Incidents	Integer	The number of new cases of cancer reported or diagnosed within the specified population.
+8.	Regulatory and Policy Changes:
+The analysis does not comprehensively account for potential changes in regulations and policies over the study period. Shifts in regulatory frameworks could significantly impact the relationship between wildfires, smoke exposure, and health outcomes.
 
-5.	Infants and Fetal Deaths Data:
+9.	Incomplete Information on Individual Demographics:
+The analysis assumes generalized effects of smoke exposure on the population without accounting for individual demographics. Variability in susceptibility based on age, pre-existing health conditions, and socioeconomic status might not be fully captured.
 
-Column Name	Data Type	Description
-Year	Integer	The calendar year in which the data was recorded.
-Infant Deaths	Integer	The number of deaths of infants (children below one year of age) during the year.
-Infant Death Rate	Float	The rate of infant deaths per 1,000 live births during the specified year.
-Fetal Deaths	Integer	The number of fetal deaths (stillbirths) during the specified year.
-Fetal Death Ratio	Float	The ratio of fetal deaths to the total number of births during the specified year.
+10.	Data Extraction and Source Selection:
+The extraction of AQI values relied on monitoring stations within a specific radius, potentially influencing the representativeness of the air quality data for Del Rio. The selection of specific monitoring stations and the increased bounding box scale may introduce biases.
 
-![image](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/assets/122260079/bf9e6a6f-dbc8-43ad-b77a-475ff57dd9ba)
 
 
 
