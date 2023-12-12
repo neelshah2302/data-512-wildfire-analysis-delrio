@@ -1,7 +1,7 @@
 
 # Course Project
 # Wildfire Analysis and Healthcare Impact - Del Rio
-https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE\
+https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE
 
 # Goal of the project:
 In recent years, the western United States has experienced an increasing frequency of wildfires, marking summers with billowing smoke that spans across vast regions. The causes behind this surge are many, compromising factors such as climate change, forestry policies, and growing awareness. The consequential impact of these wildland fires extends far beyond the immediate affected areas, affecting health, tourism, property, and various facets of society.
@@ -18,7 +18,7 @@ The significance of this analysis lies in its potential to influence proactive d
 **City for the analysis: Del Rio, Texas (County = Val Verde)**
 
 # Licence: 
-1.  [https://github.com/neelshah2302/data-512-course-project/blob/main/LICENSE](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE)
+1. https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE
 
 # REST API Documentation and other sources: 
 1. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81
