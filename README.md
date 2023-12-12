@@ -1,44 +1,39 @@
 
 # Course Project
 # Wildfire Analysis and Healthcare Impact - Del Rio
-
-[![GitHub license](https://img.shields.io/github/license/neelshah2302/data-512-wildfire-analysis-delrio)](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE)
-
-# Part 1 - Common Analysis
+https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE\
 
 # Goal of the project:
-More and more frequently summers in the western US have been characterized by wildfires with smoke billowing across multiple western states. There are many proposed causes for this: climate change, US Forestry policy, and growing awareness, just to name a few. Regardless of the cause, the impact of wildland fires is widespread. There is a growing body of work pointing to the negative impacts of smoke on health, tourism, property, and other aspects of society.
+In recent years, the western United States has experienced an increasing frequency of wildfires, marking summers with billowing smoke that spans across vast regions. The causes behind this surge are many, compromising factors such as climate change, forestry policies, and growing awareness. The consequential impact of these wildland fires extends far beyond the immediate affected areas, affecting health, tourism, property, and various facets of society.
 
-The course project will require that we analyze wildfire impacts on a specific city in the US. The end goal is to be able to inform policymakers, city managers, city councils, or other civic institutions, to make an informed plan for how they could or whether they should make plans to mitigate future impacts from wildfires.
+Del Rio, situated in Val Verde County, Texas, is a vibrant community that boasts a population of approximately 34,673 residents. Situated in the heart of the Lone Star State, this city experiences a Hot Semi-Arid climate, characterized by warm temperatures and relatively low precipitation. Del Rio's residents enjoy a unique blend of southwestern charm and Texan hospitality. The city's air quality is notably good, with an average Air Quality Index (AQI) of 40, indicating a relatively low level of air pollution. Del Rio's scenic landscapes and welcoming atmosphere make it a compelling destination for those seeking a taste of Texas living amidst a backdrop of arid beauty.
+This analysis focuses on Del Rio, Texas, situated in Val Verde County, a region that has been immune to the encroaching consequences of wildfires. The motivation behind this exploration is rooted in the necessity to inform key decision-makers – including policymakers, city managers, and civic institutions – about the potential impact of wildfires on Del Rio. By delving into the correlations between wildfire-induced smoke exposure and various health outcomes, this study seeks to provide actionable insights that can guide the formulation of informed plans and strategies for mitigating future impacts.
+Del Rio is situated on the border of Mexico and the USA, southwest in Texas. Most of the wildfires in Texas have been in the north eastern region of Texas.  Thus, based on these facts, some important research questions we would like to answer using this analysis are:
+1.	Is Del Rio affected by smoke from wildfires in Texas?
+2.	Does this increase the Smoke or AQI values for Del Rio?
+3.	Does smoke from wildfires affect the health of residents of Del Rio?
+   
+The significance of this analysis lies in its potential to influence proactive decision-making. By understanding the historical patterns of wildfires, predicting future trends, and correlating these with health outcomes, we aspire to provide valuable insights that can shape public policies, environmental strategies, and healthcare interventions. Our ultimate goal is to contribute to the well-being and resilience of Del Rio and its residents in the face of an evolving environmental landscape.
 
-**City assigned to me for the analysis: Del Rio, Texas (County = Val Verde)**
-
-For the Part 1 Common Analysis, we will perform the following High-level steps:
-1. Wildfire Data extraction for a specific city
-2. AQI Data Extraction for a specific city
-3. Predictive Model Deployment
-4. Data Analysis
-
-Step 1 and Step 2 correspond to Data extraction of Wildfire data by downloading the data and processing from https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81 and web scrapping the AQI data using US EPA API respectively.
-
-For step 3, we need to develop a predictive model based on the fire data and smoke estimate for our assigned city. The model should predict smoke estimates for every year for the next 25 years (i.e., 2024-2049).
-
-For step 4, We will perform an analysis of smoke estimates defined by us for the city and the AQI extracted from monitoring stations near the city. The analysis will consist of visualizations answering the following:
-1. Produce a histogram showing the number of fires occurring every 50-mile distance from your assigned city up to the max specified distance.
-2. Produce a time series graph of total acres burned per year for the fires occurring in the specified distance from your city.
-3. Produce a time series graph containing your fire smoke estimate for your city and the AQI estimate for your city.
-
-In the end, we need to write a short reflection on the project that focuses on both the findings from this analysis and the collaborative aspect of the assignment.
+**City for the analysis: Del Rio, Texas (County = Val Verde)**
 
 # Licence: 
-1.  https://github.com/neelshah2302/data-512-course-project/blob/main/LICENSE
+1.  [https://github.com/neelshah2302/data-512-course-project/blob/main/LICENSE](https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/blob/f43d29e0f87b7bb5598342dcc36ac79aff80f638/LICENSE)
 
 # REST API Documentation and other sources: 
-1. [https://www.mediawiki.org/wiki/API:Info](https://aqs.epa.gov/aqsweb/documents/data_api.html)
-2. https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
-3. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81
+1. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81
+2. https://aqs.epa.gov/aqsweb/documents/data_api.html
+3. https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf
+4. https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81
+5. https://healthdata.dshs.texas.gov/dashboard/births-and-deaths/deaths
+6. https://www.dshs.texas.gov/vital-statistics-data
+7. https://www.cancer-rates.com/tx/
+8. https://seer.cancer.gov/ 
 
-# Implementation:
+# Methodology:
+<img width="872" alt="Screenshot 2023-12-11 at 9 12 23 PM" src="https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/assets/122260079/6eeb033a-bf63-44cc-94ec-d0c4d7d76992">
+
+# Implementation
 
 **1. Wildfire_Data_Extraction.ipynb -**
 
@@ -60,7 +55,7 @@ Del Rio is very remote and lies on the border of Mexico. Thus to get the monitor
 
 The code will extract daily AQI information for the monitoring station in Brewster Texas. I used a for loop to extract yearly data for these 60 years. The code will extract both gaseous and particulate AQI and store all of it as data frame extracted from dictionary format. I then combine the data frames and extract only the date, AQI, and pollutant type for each day.
 
-**3. Data_Analysis_and_Prediction.ipynb-**
+**3. Data_Analysis_Prediction_and_Healthcare_Impact.ipynb-**
 
 This Notebook is for analysis of the fire and AQI data extracted for Del Rio Texas and comparing certain results. The results/visualizations included are:
 1. Produce a histogram showing the number of fires occurring every 50-mile distance from your assigned city up to the max specified distance.
@@ -90,6 +85,26 @@ The results from this analysis are produced in the form of 3 Visualizations:
 Prediction of Smoking Estimate from 2024 to 2049 based on the historical data:
 
 <img width="856" alt="Screenshot 2023-11-08 at 7 16 32 PM" src="https://github.com/neelshah2302/data-512-course-project/assets/122260079/186ca414-cc71-4876-9312-412b9fe5e656">
+
+### Healthcare Impact:
+
+1.	Correlation Between Smoke Estimates and Deaths:
+<img width="579" alt="image" src="https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/assets/122260079/1831a001-b46b-4132-bf99-cc15db2f96f9">
+ 
+The analysis revealed a robust positive correlation of 64% between smoke estimates and overall deaths in Del Rio. Over the examined period (1970-2015), the number of deaths consistently increased in tandem with rising smoke estimates. This correlation suggests that smoke exposure from wildfires is a significant contributing factor to overall mortality in the region.
+
+2.	Correlation Between Smoke Estimates and Cancer Mortality:
+<img width="577" alt="image" src="https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/assets/122260079/4bd4e2da-88c5-463f-b32d-c0068b4417c3">
+
+Contrary to the strong correlation observed for overall deaths, the relationship between smoke estimates and cancer mortality displayed a weaker correlation of 12%. While the number of cancer incidents and deaths increased (1995-2020 and 1990-2020, respectively), the correlation with smoke estimates was less pronounced. This suggests that other factors may play a more substantial role in cancer outcomes.
+
+3.	Correlation Between Smoke Estimates and Infant/Fetal Mortality:
+<img width="577" alt="image" src="https://github.com/neelshah2302/data-512-wildfire-analysis-delrio/assets/122260079/448767eb-4568-475e-bfb1-73e42807c56d">
+
+Unexpectedly, a negative correlation was identified for smoke estimates and infant/fetal mortality, with correlations of -53% and -25% respectively. The data indicates a decline in infant and fetal deaths, contrasting with the overall trend of increasing smoke estimates. This unexpected finding warrants further investigation into additional factors influencing infant and fetal mortality in the presence of wildfires.
+
+
+
 
 
        
